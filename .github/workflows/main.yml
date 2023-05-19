@@ -13,9 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: login
+      run: docker login -u yogesh3096 -p qwertyQ123
+
     - name: Login to Docker registry
       uses: docker/login-action@v1
-      run: docker login -u yogesh3096 -p qwertyQ123
+      
       with:
         username: ${{ secrets.yogesh3096 }}
         password: ${{ secrets.qwertyQ123 }}
