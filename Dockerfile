@@ -1,23 +1,18 @@
-# Use a base image with Python and required dependencies
-FROM python:3.9-slim-buster
 
-# Set the working directory inside the container
+# Use a base image with the required environment
+FROM python:3.9
+
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file to the container
+# Copy the dependencies file
 COPY requirements.txt .
 
-# Install the Python dependencies
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the project files to the container
+# Copy the application code into the container
 COPY . .
 
-# Set environment variables, if needed
-ENV VARIABLE_NAME=value
-
-# Expose any necessary ports, if applicable
-EXPOSE 8080
-
-# Define the command to run when the container starts
-CMD [ "python", "app.py" ]
+# Specify the command to run the application
+CMD ["python", "app.py"]
