@@ -29,6 +29,14 @@ jobs:
     - name: Push Docker image
       run: docker push yogesh3096/trial123:latest
 
+    - name: Save state
+      run: echo "::save-state name=myState::myValue"
+    
+    - name: Set output
+      run: echo "::set-output name=myOutput::myOutputValue"
+    
+
+
     # - name: Deploy to AWS
     #   uses: aws-actions/elastic-beanstalk-deploy@v3
     #   with:
