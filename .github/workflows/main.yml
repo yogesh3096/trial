@@ -20,10 +20,10 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t yogesh3096/qwertyQ123:latest .
+      run: docker build -t yogesh3096/trial123:latest .
 
     - name: Push Docker image
-      run: docker push yogesh3096/qwertyQ123:latest
+      run: docker push yogesh3096/trial123:latest
 
     # - name: Deploy to AWS
     #   uses: aws-actions/elastic-beanstalk-deploy@v3
