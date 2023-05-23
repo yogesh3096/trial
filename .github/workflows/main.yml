@@ -25,6 +25,16 @@ jobs:
     - name: Push Docker image
       run: docker push yogesh3096/trial123:latest
 
+
+
+    - name: 'Upload Log Artifact'
+      uses: actions/upload-artifact@v3
+      with:
+        name: logs
+        path: test_log/surveillance_logs.txt
+        retention-days: 5
+
+
     # - name: Deploy to AWS
     #   uses: aws-actions/elastic-beanstalk-deploy@v3
     #   with:
